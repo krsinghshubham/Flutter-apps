@@ -6,40 +6,46 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var num1=0, num2=0,sum=0;
-  final TextEditingController t1= new TextEditingController(text:"0");
-  final TextEditingController t2=new TextEditingController(text:"0");
-  void doMulti(){
+  var num1 = 0, num2 = 0, sum = 0;
+  final TextEditingController t1 = new TextEditingController(text: "0");
+  final TextEditingController t2 = new TextEditingController(text: "0");
+  void doMulti() {
     setState(() {
-      num1=int.parse(t1.text);
-      num2=int.parse(t2.text);
-      sum=num1*num2;
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 * num2;
     });
-
   }
-   void add(){
-    setState(() {
-      num1=int.parse(t1.text);
-      num2=int.parse(t2.text);
-      sum=num1+num2;
-    });
 
+  void add() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 + num2;
+    });
   }
-   void sub(){
-    setState(() {
-      num1=int.parse(t1.text);
-      num2=int.parse(t2.text);
-      sum=num1-num2;
-    });
 
+  void sub() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 - num2;
+    });
   }
-   void div(){
-    setState(() {
-      num1=int.parse(t1.text);
-      num2=int.parse(t2.text);
-      sum=num1~/num2;
-    });
 
+  void div() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 ~/ num2;
+    });
+  }
+
+  void doclear() {
+    setState(() {
+      num1 = int.parse("0");
+      num2 = int.parse("0");
+    });
   }
 
   @override
@@ -50,14 +56,14 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.all(40.0),
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            
-              
-              children: <Widget>[
-                new Text("output: $sum",
-                style: new TextStyle(fontSize:20.0, fontWeight: FontWeight.bold,color:Colors.purple),)
-              ,
-            
-            
+            children: <Widget>[
+              new Text(
+                "output: $sum",
+                style: new TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.purple),
+              ),
               new TextField(
                 keyboardType: TextInputType.number,
                 decoration: new InputDecoration(hintText: "enter 1st no."),
@@ -102,15 +108,26 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               new Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-            ),
-              new Row(mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                new MaterialButton(
-                child: new Text("Clear"),
-                color:Colors.blueAccent,
-                onPressed: (){},
-              )],)
+                padding: const EdgeInsets.only(top: 20.0),
+              ),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new MaterialButton(
+                    child: new Text("Clear"),
+                    color: Colors.blueAccent,
+                    onPressed: () {},
+                  )
+                ],
+              ),
+              new RaisedButton(
+                child: Text("Clear Inputs"),
+                onPressed: doclear,
+                color: Colors.red,
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(3000.0),
+                    side: BorderSide(color: Colors.red)),
+              )
             ],
           )),
     );
