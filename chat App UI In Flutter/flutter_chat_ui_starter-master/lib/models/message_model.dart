@@ -45,6 +45,7 @@ List<Message> chats = [
     isLiked: false,
     unread: true,
   ),
+  
   Message(
     sender: olivia,
     time: '4:30 PM',
@@ -91,55 +92,7 @@ List<Message> chats = [
 
 // EXAMPLE MESSAGES IN CHAT SCREEN
 List<Message> messages = [
-  Message(
-    sender: james,
-    time: '5:30 PM',
-    text: 'Hey, how\'s it going? What did you do today?',
-    isLiked: false,
-    unread: true,
-  ),
-  Message(
-    sender: olivia,
-    time: '4:30 PM',
-    text: 'Hey, how\'s it going? What did you do today?',
-    isLiked: false,
-    unread: true,
-  ),
-  Message(
-    sender: john,
-    time: '3:30 PM',
-    text: 'Hey, how\'s it going? What did you do today?',
-    isLiked: false,
-    unread: false,
-  ),
-  Message(
-    sender: sophia,
-    time: '2:30 PM',
-    text: 'Hey, how\'s it going? What did you do today?',
-    isLiked: false,
-    unread: true,
-  ),
-  Message(
-    sender: steven,
-    time: '1:30 PM',
-    text: 'Hey, how\'s it going? What did you do today?',
-    isLiked: false,
-    unread: false,
-  ),
-  Message(
-    sender: sam,
-    time: '12:30 PM',
-    text: 'Hey, how\'s it going? What did you do today?',
-    isLiked: false,
-    unread: false,
-  ),
-  Message(
-    sender: greg,
-    time: '11:30 AM',
-    text: 'Hey, how\'s it going? What did you do today?',
-    isLiked: false,
-    unread: false,
-  ),
+ 
   Message(
     sender: james,
     time: '5:30 PM',
